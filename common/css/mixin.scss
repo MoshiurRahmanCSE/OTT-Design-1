@@ -1,0 +1,50 @@
+@use "sass:math";
+@import "./variable.scss";
+
+@mixin maxLine($num) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin imgViewer($percent) {
+  position: relative;
+  .imgViewer {
+    padding-top: $percent;
+    margin-bottom: 0;
+    .fixingRatio {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      .imgRatio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+@mixin sectionTitle {
+	font-size: 22px;
+	line-height: 1.2;
+	color: $color-b;
+}
+@mixin gradientText {
+  background: linear-gradient(90deg, rgba(7,0,223,1) 0%, rgb(13, 119, 231) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
